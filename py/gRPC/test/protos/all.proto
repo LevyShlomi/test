@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package activity;
+
+option csharp_namespace = "ControlUp";
+
+service Tester {
+    rpc SaveSnapshot(Dataset) returns (Empty);
+    rpc Echo(Record) returns (Record);
+}
+message Empty {
+
+}
+ message Affinity {
+    uint64 mask = 1;
+    int32 cores = 2 ;
+ }
+ message CounterStat {
+    float Total = 1;
+    int32 Count = 2 ;
+    bool HasErrors = 3 ;
+ }
+ message Counter {
+     float value = 1;
+     float avg = 2;
+     int32 timestamp = 3;
+     string tag = 4;
+ }
+ message Record {
+    string id = 1;
+    repeated Property Properties = 2;
+    message Property {
+        string Name = 1;
+        oneof propertyValue {
+             Counter metric = 2;
+             CounterStat agg = 3;
+             int32 Int32Update = 4;
+             int64 Int64Update = 5;
+             uint32 UInt32Update = 6;
+             uint64 UInt64Update = 7;
+             string StringUpdate = 8;
+             bool BooleanUpdate = 9;
+             float SingleUpdate = 10;
+             double DoubleUpdate = 11;
+             Affinity ProcessAffinityClassUpdate = 12;
+        }   
+        
+     }
+ }
+  
+message Table {
+    string name = 1;
+    repeated Record records = 2;
+}
+message Dataset {
+    repeated Table tables = 1;
+}
+ message ActivityEvent {
+    int32 Offset = 1;
+    int32 Timestamp = 2;
+    Event Event = 3;
+ }
+ 
+ message Event {
+    string TableName = 1;
+    Record Data = 2;
+    EventType Type = 3;
+    enum EventType {
+        None = 0;
+        Add = 1;
+        Update = 2;
+        Remove = 3;
+        Snapshot = 4;
+    }
+ }
+ 
