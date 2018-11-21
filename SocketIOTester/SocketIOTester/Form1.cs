@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,8 @@ namespace SocketIOTester
             this.Text = "Channel Id: " + id.ToString();
         }
         int id;
+
+        #region Page Load
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -43,12 +46,15 @@ namespace SocketIOTester
             
 
         }
-
+        #endregion
         private void button1_Click(object sender, EventArgs e)
         {
+           
             JObject obj = new JObject();
             obj["Name"] = JToken.FromObject("Shlomi");
             socket.Emit("register",obj);
         }
+
+        
     }
 }

@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketIO.ServiceModel", "SocketIO.ServiceModel\SocketIO.ServiceModel.csproj", "{AC00F11C-9153-4610-9F04-886E60F40E06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.csproj", "{F7752185-D4DE-4C06-A253-70489D860C09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AC00F11C-9153-4610-9F04-886E60F40E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC00F11C-9153-4610-9F04-886E60F40E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC00F11C-9153-4610-9F04-886E60F40E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7752185-D4DE-4C06-A253-70489D860C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7752185-D4DE-4C06-A253-70489D860C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7752185-D4DE-4C06-A253-70489D860C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7752185-D4DE-4C06-A253-70489D860C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
