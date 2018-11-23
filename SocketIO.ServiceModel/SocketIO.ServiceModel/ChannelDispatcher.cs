@@ -64,6 +64,7 @@ namespace SocketIO.ServiceModel
             .On(Socket.EVENT_ERROR, (data) =>
             {
                 System.Diagnostics.Trace.WriteLine(data.ToString());
+
             });
         }
 
